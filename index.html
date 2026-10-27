@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APM CMC & Portal Lumina | Apoio aos Pais do Colégio Militar de Curitiba</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cmcBlue: '#1B365D',
+                        cmcGold: '#D4AF37',
+                        cmcRed: '#DC2626',
+                        luminaGreen: '#10B981',
+                        surfaceLight: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-surfaceLight text-slate-800 antialiased selection:bg-cmcBlue selection:text-white">
+
+    <!-- Top Notification Bar -->
+    <div class="bg-cmcBlue text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium border-b border-cmcGold/30">
+        <span>Parceria Oficial: APM CMC, Portal Lumina School of Masters & Colégio Militar de Curitiba</span>
+        <span class="mx-2 hidden sm:inline">|</span>
+        <a href="#contato" class="underline hover:text-cmcGold transition-colors mt-1 sm:mt-0 inline-block font-semibold">Atendimento por Companhias e Companhia de Alunos no WhatsApp</a>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Brand / Logos Area -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <a href="https://www.instagram.com/cmc_exercito/" target="_blank" title="Instagram CMC" class="flex items-center group">
+                    <img src="CMC.jpg" alt="Logo CMC" class="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-2xl shadow-sm border border-slate-200 bg-white p-1.5 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/80x80/1B365D/D4AF37?text=CMC'">
+                </a>
+                <a href="https://www.instagram.com/apm.cmc/" target="_blank" title="Instagram APM" class="flex items-center group">
+                    <img src="apm.jpg" alt="Logo APM" class="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-2xl shadow-sm border border-slate-200 bg-white p-1.5 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/80x80/1B365D/FFFFFF?text=APM'">
+                </a>
+                <a href="https://www.instagram.com/luminaschoolofmasters/" target="_blank" title="Instagram Portal Lumina" class="flex items-center group">
+                    <img src="lumina 2.jpg" alt="Logo Portal Lumina" class="w-20 h-16 sm:w-24 sm:h-20 object-contain rounded-2xl shadow-sm border border-slate-200 bg-white p-1.5 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/96x80/10B981/FFFFFF?text=Lumina'">
+                </a>
+                <div class="hidden xl:block pl-2 border-l border-slate-200">
+                    <span class="block font-extrabold text-sm leading-tight text-cmcBlue">APM CMC & LUMINA</span>
+                    <span class="text-xs text-slate-500 font-medium">Guia Oficial de Apoio Escolar</span>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-700">
+                <a href="#inicio" class="hover:text-cmcBlue transition-colors">Início</a>
+                <a href="#sobre" class="hover:text-cmcBlue transition-colors">A Parceria</a>
+                <a href="#servicos" class="hover:text-cmcBlue transition-colors">Serviços & Guia</a>
+                <a href="#series" class="hover:text-cmcBlue transition-colors">Séries & Companhias</a>
+                <a href="#mural" class="hover:text-cmcBlue transition-colors">Mural & QDT</a>
+                <a href="#depoimentos" class="hover:text-cmcBlue transition-colors">Depoimentos</a>
+                <a href="#contato" class="hover:text-cmcBlue transition-colors">Contato</a>
+            </nav>
+
+            <!-- CTA Header -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="#contato" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-xl font-bold text-xs shadow-md transition-all flex items-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Companhias WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-700 p-2 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 shadow-xl">
+            <a href="#inicio" class="block font-semibold text-slate-700 hover:text-cmcBlue">Início</a>
+            <a href="#sobre" class="block font-semibold text-slate-700 hover:text-cmcBlue">A Parceria</a>
+            <a href="#servicos" class="block font-semibold text-slate-700 hover:text-cmcBlue">Serviços & Guia</a>
+            <a href="#series" class="block font-semibold text-slate-700 hover:text-cmcBlue">Séries & Companhias</a>
+            <a href="#mural" class="block font-semibold text-slate-700 hover:text-cmcBlue">Mural & QDT</a>
+            <a href="#depoimentos" class="block font-semibold text-slate-700 hover:text-cmcBlue">Depoimentos</a>
+            <a href="#contato" class="block font-semibold text-slate-700 hover:text-cmcBlue">Contato</a>
+            <div class="pt-2">
+                <a href="#contato" class="w-full bg-emerald-600 text-white text-center py-3 rounded-xl font-bold flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Contatos por Companhias</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32 bg-gradient-to-b from-blue-50/80 via-white to-surfaceLight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-3 bg-white border border-slate-200 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
+                        <div class="flex -space-x-1">
+                            <img src="CMC.jpg" alt="CMC" class="w-6 h-6 rounded-full object-cover border border-white">
+                            <img src="apm.jpg" alt="APM" class="w-6 h-6 rounded-full object-cover border border-white">
+                            <img src="lumina 2.jpg" alt="Lumina" class="w-6 h-6 rounded-full object-cover border border-white">
+                        </div>
+                        <span class="text-cmcBlue font-extrabold">APM CMC + Portal Lumina + Colégio Militar</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Guiando pais <span class="text-cmcBlue underline decoration-cmcGold">já experientes ou de primeira viagem</span> no Colégio Militar de Curitiba
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Um ecossistema digital desenvolvido em colaboração entre CMC, APM, e Portal Lumina. Acesso descomplicado ao calendário (QDT), agendas de início de ano, eventos, orientações de fardamento e suporte de elite aos conteúdos das disciplinas.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#series" class="w-full sm:w-auto bg-cmcBlue hover:bg-slate-800 text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-cmcBlue/25 transition-all text-center flex items-center justify-center space-x-2">
+                            <span>Explorar Séries & Companhias</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contato" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 px-8 py-4 rounded-xl font-bold shadow-sm transition-all text-center flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-600 text-xl"></i>
+                            <span>Falar com as Companhias</span>
+                        </a>
+                    </div>
+                    <!-- Trust Badges -->
+                    <div class="pt-6 border-t border-slate-200/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-slate-600 font-semibold">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            <span>QDT Atualizado</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            <span>Orientações da APM</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            <span>Tutoria Lumina</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Graphic / Logos Showcase Card (Prominent Logos Display) -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-2xl relative border border-slate-100 bg-white/95">
+                        <!-- Badge -->
+                        <div class="absolute -top-4 right-8 bg-cmcRed text-white font-bold text-xs uppercase px-4 py-1.5 rounded-full shadow-md">
+                            Parceria Oficial 2026
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-cmcBlue mb-4 flex items-center space-x-2">
+                            <i class="fa-regular fa-calendar-days text-cmcGold"></i>
+                            <span>Marcas da Nossa Comunidade</span>
+                        </h3>
+                        
+                        <div class="grid grid-cols-3 gap-3 mb-6">
+                            <a href="https://www.instagram.com/cmc_exercito/" target="_blank" class="p-3.5 bg-surfaceLight hover:bg-blue-50 transition-colors rounded-2xl border border-slate-200 text-center flex flex-col items-center justify-center shadow-sm group">
+                                <img src="CMC.jpg" alt="CMC" class="w-16 h-16 object-contain mb-2 rounded-xl p-1 bg-white border border-slate-100 group-hover:scale-105 transition-transform">
+                                <span class="text-xs font-extrabold text-cmcBlue">CMC <i class="fa-brands fa-instagram text-[10px]"></i></span>
+                            </a>
+                            <a href="https://www.instagram.com/apm.cmc/" target="_blank" class="p-3.5 bg-surfaceLight hover:bg-blue-50 transition-colors rounded-2xl border border-slate-200 text-center flex flex-col items-center justify-center shadow-sm group">
+                                <img src="apm.jpg" alt="APM" class="w-16 h-16 object-contain mb-2 rounded-xl p-1 bg-white border border-slate-100 group-hover:scale-105 transition-transform">
+                                <span class="text-xs font-extrabold text-cmcBlue">APM <i class="fa-brands fa-instagram text-[10px]"></i></span>
+                            </a>
+                            <a href="https://www.instagram.com/luminaschoolofmasters/" target="_blank" class="p-3.5 bg-surfaceLight hover:bg-emerald-50 transition-colors rounded-2xl border border-slate-200 text-center flex flex-col items-center justify-center shadow-sm group">
+                                <img src="lumina 2.jpg" alt="Lumina" class="w-20 h-16 object-contain mb-2 rounded-xl p-1 bg-white border border-slate-100 group-hover:scale-105 transition-transform">
+                                <span class="text-xs font-extrabold text-cmcBlue">Lumina <i class="fa-brands fa-instagram text-[10px]"></i></span>
+                            </a>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="p-3.5 bg-blue-50/70 rounded-xl border border-blue-100 flex items-center space-x-3">
+                                <div class="w-9 h-9 rounded-lg bg-cmcBlue text-cmcGold flex items-center justify-center flex-shrink-0 font-bold">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Tradição & Hierarquia</h4>
+                                    <p class="text-xs text-slate-600">Colégio Militar de Curitiba</p>
+                                </div>
+                            </div>
+
+                            <div class="p-3.5 bg-emerald-50/70 rounded-xl border border-emerald-100 flex items-center space-x-3">
+                                <div class="w-9 h-9 rounded-lg bg-emerald-600 text-white flex items-center justify-center flex-shrink-0 font-bold">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Excelência Acadêmica</h4>
+                                    <p class="text-xs text-slate-600">Portal Lumina School of Masters</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-200 text-center">
+                            <a href="#sobre" class="text-sm font-bold text-cmcBlue hover:text-cmcRed transition-colors">
+                                Conhecer a Missão Conjunta &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE A PARCERIA (Com Logos Prominentes & Instagram Links) -->
+    <section id="sobre" class="py-20 bg-white border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-cmcBlue font-extrabold text-xs uppercase tracking-widest bg-cmcBlue/10 px-3.5 py-1.5 rounded-md">Aliança Institucional</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">União APM, Portal Lumina & CMC</h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Integramos o rigor e a tradição do Colégio Militar de Curitiba com a tutoria especializada do Portal Lumina e o amparo familiar da APM.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: APM -->
+                <div class="bg-surfaceLight p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
+                    <a href="https://www.instagram.com/apm.cmc/" target="_blank" class="group">
+                        <img src="apm.jpg" alt="APM Logo" class="w-32 h-32 object-contain mb-6 p-2 bg-white rounded-2xl shadow-sm border border-slate-200 group-hover:scale-105 transition-transform">
+                    </a>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-3">APM (Associação de Pais e Mestres)</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Acolhimento humanizado para novos pais, integração da comunidade, eventos cívicos e representatividade junto ao comando do colégio.
+                    </p>
+                    <a href="https://www.instagram.com/apm.cmc/" target="_blank" class="inline-flex items-center space-x-1.5 text-xs font-bold text-cmcBlue hover:text-cmcRed">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                        <span>@apm.cmc</span>
+                    </a>
+                </div>
+
+                <!-- Card 2: Lumina -->
+                <div class="bg-surfaceLight p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
+                    <a href="https://www.luminaschool.com.br" target="_blank" class="group">
+                        <img src="lumina 2.jpg" alt="Lumina Logo" class="w-40 h-32 object-contain mb-6 p-2 bg-white rounded-2xl shadow-sm border border-slate-200 group-hover:scale-105 transition-transform">
+                    </a>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-3">Portal Lumina School of Masters</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Tutoria em simulados, resumos e orientações de estudos, preparação para as provas de todas as disciplinas e técnicas de estudo focadas em aprovações de elite.
+                    </p>
+                    <div class="flex flex-col space-y-2 w-full">
+                        <a href="https://www.luminaschool.com.br" target="_blank" class="w-full bg-cmcBlue hover:bg-slate-800 text-white py-2.5 rounded-xl font-bold text-xs transition-all shadow-sm flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-globe"></i>
+                            <span>Visitar Site Oficial</span>
+                        </a>
+                        <a href="https://www.instagram.com/luminaschoolofmasters/" target="_blank" class="inline-flex items-center justify-center space-x-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 pt-1">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                            <span>@luminaschoolofmasters</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: CMC -->
+                <div class="bg-surfaceLight p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
+                    <a href="https://www.instagram.com/cmc_exercito/" target="_blank" class="group">
+                        <img src="CMC.jpg" alt="CMC Logo" class="w-32 h-32 object-contain mb-6 p-2 bg-white rounded-2xl shadow-sm border border-slate-200 group-hover:scale-105 transition-transform">
+                    </a>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-3">Colégio Militar de Curitiba</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Tradição secular de civismo, disciplina, hierarquia e excelência de ensino que forma os futuros líderes e cidadãos do Brasil.
+                    </p>
+                    <a href="https://www.instagram.com/cmc_exercito/" target="_blank" class="inline-flex items-center space-x-1.5 text-xs font-bold text-cmcBlue hover:text-cmcRed">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                        <span>@cmc_exercito</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTAQUE ESPECIAL PORTAL LUMINA -->
+    <section class="py-16 bg-gradient-to-r from-blue-900 via-cmcBlue to-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8 space-y-4 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Parceria de Excelência Acadêmica</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                        Conheça a Plataforma Oficial do <span class="text-cmcGold">Portal Lumina School of Masters</span>
+                    </h2>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+                        Tutoria em simulados, resumos e orientações de estudos, preparação para as provas de todas as disciplinas e técnicas de estudo focadas em aprovações de elite.
+                    </p>
+                </div>
+                <div class="lg:col-span-4 flex flex-col items-center justify-center space-y-4 bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 shadow-xl">
+                    <img src="lumina 2.jpg" alt="Logo Portal Lumina" class="w-48 h-20 object-contain bg-white rounded-xl p-2 shadow-sm">
+                    <a href="https://www.luminaschool.com.br" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-3.5 px-6 rounded-2xl font-bold text-sm shadow-lg transition-all flex items-center justify-center space-x-2 group">
+                        <span>Acessar luminaschool.com.br</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: SERVIÇOS & GUIA PARA PAIS -->
+    <section id="servicos" class="py-20 bg-slate-50 border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-cmcBlue font-extrabold text-xs uppercase tracking-widest bg-cmcBlue/10 px-3.5 py-1.5 rounded-md">Serviços Oficiais</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Guia Essencial para o Ano Letivo</h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Tudo o que você precisa saber para descomplicar a rotina no CMC, com nome, objetivo, orientações e acesso direto.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-cmcBlue text-cmcGold flex items-center justify-center text-xl font-bold mb-6 shadow-sm">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">Agenda de Início de Aulas</h3>
+                        <p class="text-xs font-extrabold text-emerald-600 mb-3 uppercase tracking-wider">Objetivo: Organização e Pontualidade</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Cronograma completo com horários de entrada, formaturas, reuniões pedagógicas e entrega de materiais solicitados pelo comando militar.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs text-slate-500 font-medium">Atualizado 2026</span>
+                        <a href="#contato" class="bg-cmcBlue/10 hover:bg-cmcBlue text-cmcBlue hover:text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all">Ver Agenda &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-cmcRed text-white flex items-center justify-center text-xl font-bold mb-6 shadow-sm">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">Guia de Fardamento & Uniformes</h3>
+                        <p class="text-xs font-extrabold text-emerald-600 mb-3 uppercase tracking-wider">Objetivo: Padronização e Praticidade</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Orientações detalhadas sobre os uniformes permitidos, insígnias, graxa, marcação de peças e alfaiatarias credenciadas pela APM.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs text-slate-500 font-medium">Guia Prático</span>
+                        <a href="#contato" class="bg-cmcBlue/10 hover:bg-cmcBlue text-cmcBlue hover:text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all">Baixar Guia &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-xl font-bold mb-6 shadow-sm">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">Apoio ao QDT (Quadro de Trabalhos)</h3>
+                        <p class="text-xs font-extrabold text-emerald-600 mb-3 uppercase tracking-wider">Objetivo: Desempenho Acadêmico</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Tutoria em simulados, resumos e orientações de estudos, preparação para as provas de todas as disciplinas e técnicas de estudo focadas em aprovações de elite.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs text-slate-500 font-medium">Portal Lumina</span>
+                        <a href="#contato" class="bg-cmcBlue/10 hover:bg-cmcBlue text-cmcBlue hover:text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all">Consultar QDT &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SÉRIES & COMPANHIAS (6º ANO AO 3º EM) COM ABAS INTERATIVAS -->
+    <section id="series" class="py-20 bg-white border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-cmcBlue font-extrabold text-xs uppercase tracking-widest bg-cmcBlue/10 px-3.5 py-1.5 rounded-md">Conteúdo por Ano Escolar & Companhias</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Orientações Específicas por Série</h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Clique em cada aba abaixo para visualizar o foco, os principais desafios e o contato direto com a Companhia correspondente.
+                </p>
+            </div>
+
+            <!-- Grade Tabs Buttons Container -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-10 bg-slate-100 p-2.5 rounded-2xl max-w-4xl mx-auto shadow-inner">
+                <button onclick="switchTab('fund6')" id="btn-fund6" class="tab-btn px-4 py-3 rounded-xl font-bold text-sm transition-all bg-cmcBlue text-white shadow-md">6º Ano</button>
+                <button onclick="switchTab('fund7')" id="btn-fund7" class="tab-btn px-4 py-3 rounded-xl font-bold text-sm transition-all text-slate-600 hover:text-slate-900">7º Ano</button>
+                <button onclick="switchTab('fund8')" id="btn-fund8" class="tab-btn px-4 py-3 rounded-xl font-bold text-sm transition-all text-slate-600 hover:text-slate-900">8º Ano</button>
+                <button onclick="switchTab('fund9')" id="btn-fund9" class="tab-btn px-4 py-3 rounded-xl font-bold text-sm transition-all text-slate-600 hover:text-slate-900">9º Ano</button>
+                <button onclick="switchTab('med1')" id="btn-med1" class="tab-btn px-4 py-3 rounded-xl font-bold text-sm transition-all text-slate-600 hover:text-slate-900">1º Ano EM</button>
+                <button onclick="switchTab('med2')" id="btn-med2" class="tab-btn px-4 py-3 rounded-xl font-bold text-sm transition-all text-slate-600 hover:text-slate-900">2º Ano EM</button>
+                <button onclick="switchTab('med3')" id="btn-med3" class="tab-btn px-4 py-3 rounded-xl font-bold text-sm transition-all text-slate-600 hover:text-slate-900">3º Ano EM</button>
+            </div>
+
+            <!-- Tab Content Panels -->
+            <div class="max-w-4xl mx-auto bg-surfaceLight border border-slate-200/80 rounded-3xl p-6 sm:p-10 shadow-lg">
+                
+                <!-- 6º Ano (3ª Companhia) -->
+                <div id="content-fund6" class="tab-content space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200">
+                        <div>
+                            <span class="text-xs font-bold uppercase px-3 py-1 bg-cmcBlue/10 text-cmcBlue rounded-md">Ensino Fundamental II • 3ª Companhia</span>
+                            <h3 class="text-2xl font-extrabold text-slate-900 mt-2">6º Ano - Adaptação e Acolhimento Inicial</h3>
+                        </div>
+                        <div class="mt-4 sm:mt-0">
+                            <a href="https://wa.me/554135924233?text=Olá,%20sou%20responsável%20de%20aluno%20do%206º%20Ano%20(3ª%20Cia)%20do%20CMC%20e%20gostaria%20de%20suporte." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all inline-flex items-center space-x-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>WhatsApp 3ª Cia ( (41) 3592-4233 )</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-bullseye text-cmcGold"></i>
+                                <span>Objetivo Principal</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">Acalmar os pais de primeira viagem e ajudar os alunos na transição da rotina escolar civil para o sistema militar, ensinando autonomia, organização do material e respeito à hierarquia com leveza.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-lightbulb text-cmcGold"></i>
+                                <span>Dicas da APM & Lumina</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">Incentive a verificação diária da caderneta e do QDT junto à 3ª Companhia. Tenha paciência com a adaptação do fardamento e marque o nome em todas as peças.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7º Ano (3ª Companhia) -->
+                <div id="content-fund7" class="tab-content hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200">
+                        <div>
+                            <span class="text-xs font-bold uppercase px-3 py-1 bg-cmcBlue/10 text-cmcBlue rounded-md">Ensino Fundamental II • 3ª Companhia</span>
+                            <h3 class="text-2xl font-extrabold text-slate-900 mt-2">7º Ano - Consolidação de Hábitos de Estudo</h3>
+                        </div>
+                        <div class="mt-4 sm:mt-0">
+                            <a href="https://wa.me/554135924233?text=Olá,%20sou%20responsável%20de%20aluno%20do%207º%20Ano%20(3ª%20Cia)%20do%20CMC%20e%20gostaria%20de%20suporte." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all inline-flex items-center space-x-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>WhatsApp 3ª Cia ( (41) 3592-4233 )</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-bullseye text-cmcGold"></i>
+                                <span>Objetivo Principal</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">Consolidar a rotina de estudos autônomos em casa, estimulando a participação nas olimpíadas científicas e atividades extracurriculares do colégio.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-lightbulb text-cmcGold"></i>
+                                <span>Dicas da APM & Lumina</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">O foco da família deve ser o acompanhamento de notas parciais e o apoio nas revisões semanais propostas pelo Portal Lumina em conjunto com a 3ª Cia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8º Ano (2ª Companhia) -->
+                <div id="content-fund8" class="tab-content hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200">
+                        <div>
+                            <span class="text-xs font-bold uppercase px-3 py-1 bg-cmcBlue/10 text-cmcBlue rounded-md">Ensino Fundamental II • 2ª Companhia</span>
+                            <h3 class="text-2xl font-extrabold text-slate-900 mt-2">8º Ano - Aprofundamento e Desafios Matemáticos</h3>
+                        </div>
+                        <div class="mt-4 sm:mt-0">
+                            <a href="https://wa.me/554135924232?text=Olá,%20sou%20responsável%20de%20aluno%20do%208º%20Ano%20(2ª%20Cia)%20do%20CMC%20e%20gostaria%20de%20suporte." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all inline-flex items-center space-x-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>WhatsApp 2ª Cia ( (41) 3592-4232 )</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-bullseye text-cmcGold"></i>
+                                <span>Objetivo Principal</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">Preparar os alunos para o aumento da complexidade nas disciplinas exatas e científicas, construindo resiliência diante de avaliações mais rigorosas.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-lightbulb text-cmcGold"></i>
+                                <span>Dicas da APM & Lumina</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">O suporte do Portal Lumina em matemática e física básica faz toda a diferença neste ano para evitar lacunas de aprendizagem.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9º Ano (2ª Companhia) -->
+                <div id="content-fund9" class="tab-content hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200">
+                        <div>
+                            <span class="text-xs font-bold uppercase px-3 py-1 bg-cmcBlue/10 text-cmcBlue rounded-md">Ensino Fundamental II • 2ª Companhia</span>
+                            <h3 class="text-2xl font-extrabold text-slate-900 mt-2">9º Ano - Transição para o Ensino Médio</h3>
+                        </div>
+                        <div class="mt-4 sm:mt-0">
+                            <a href="https://wa.me/554135924232?text=Olá,%20sou%20responsável%20de%20aluno%20do%209º%20Ano%20(2ª%20Cia)%20do%20CMC%20e%20gostaria%20de%20suporte." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all inline-flex items-center space-x-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>WhatsApp 2ª Cia ( (41) 3592-4232 )</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-bullseye text-cmcGold"></i>
+                                <span>Objetivo Principal</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">Coroar a conclusão do Ensino Fundamental com excelência e alinhar as expectativas para o Ensino Médio e vestibulares militares.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-lightbulb text-cmcGold"></i>
+                                <span>Dicas da APM & Lumina</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">Participação ativa nos encontros promovidos pela APM e pela 2ª Companhia sobre os itinerários formativos do Ensino Médio.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1º Ano EM (1ª Companhia) -->
+                <div id="content-med1" class="tab-content hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200">
+                        <div>
+                            <span class="text-xs font-bold uppercase px-3 py-1 bg-cmcBlue/10 text-cmcBlue rounded-md">Ensino Médio • 1ª Companhia</span>
+                            <h3 class="text-2xl font-extrabold text-slate-900 mt-2">1º Ano do Ensino Médio - Foco em Alta Performance</h3>
+                        </div>
+                        <div class="mt-4 sm:mt-0">
+                            <a href="https://wa.me/554135924231?text=Olá,%20sou%20responsável%20de%20aluno%20do%201º%20Ano%20EM%20(1ª%20Cia)%20do%20CMC%20e%20gostaria%20de%20suporte." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all inline-flex items-center space-x-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>WhatsApp 1ª Cia ( (41) 3592-4231 )</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-bullseye text-cmcGold"></i>
+                                <span>Objetivo Principal</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">Iniciar a preparação de longo prazo para o ENEM, vestibulares tradicionais e concursos militares (EsPCEx, AFA, IME, ITA) com base sólida.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-lightbulb text-cmcGold"></i>
+                                <span>Dicas da APM & Lumina</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">Aproveite os simulados do Portal Lumina integrados aos cronogramas da 1ª Companhia para mapear pontos fortes e fracos desde o início do ano.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2º Ano EM (1ª Companhia) -->
+                <div id="content-med2" class="tab-content hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200">
+                        <div>
+                            <span class="text-xs font-bold uppercase px-3 py-1 bg-cmcBlue/10 text-cmcBlue rounded-md">Ensino Médio • 1ª Companhia</span>
+                            <h3 class="text-2xl font-extrabold text-slate-900 mt-2">2º Ano do Ensino Médio - Aceleração e Estratégia</h3>
+                        </div>
+                        <div class="mt-4 sm:mt-0">
+                            <a href="https://wa.me/554135924231?text=Olá,%20sou%20responsável%20de%20aluno%20do%202º%20Ano%20EM%20(1ª%20Cia)%20do%20CMC%20e%20gostaria%20de%20suporte." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all inline-flex items-center space-x-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>WhatsApp 1ª Cia ( (41) 3592-4231 )</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-bullseye text-cmcGold"></i>
+                                <span>Objetivo Principal</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">Intensificar o ritmo de resolução de questões discursivas e testes, alinhando o conteúdo escolar com as exigências dos editais militares e federais.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-lightbulb text-cmcGold"></i>
+                                <span>Dicas da APM & Lumina</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">Manter foco na gestão do tempo entre as obrigações da rotina militar e os estudos complementares para vestibulares.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3º Ano EM (1ª Companhia) -->
+                <div id="content-med3" class="tab-content hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200">
+                        <div>
+                            <span class="text-xs font-bold uppercase px-3 py-1 bg-cmcBlue/10 text-cmcBlue rounded-md">Ensino Médio • 1ª Companhia</span>
+                            <h3 class="text-2xl font-extrabold text-slate-900 mt-2">3º Ano do Ensino Médio - Reta Final e Aprovação</h3>
+                        </div>
+                        <div class="mt-4 sm:mt-0">
+                            <a href="https://wa.me/554135924231?text=Olá,%20sou%20responsável%20de%20aluno%20do%203º%20Ano%20EM%20(1ª%20Cia)%20do%20CMC%20e%20gostaria%20de%20suporte." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all inline-flex items-center space-x-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>WhatsApp 1ª Cia ( (41) 3592-4231 )</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-bullseye text-cmcGold"></i>
+                                <span>Objetivo Principal</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">Coroar a trajetória no CMC com aprovações de destaque nas melhores universidades do país e nas Academias Militares.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-cmcBlue mb-2 flex items-center space-x-2">
+                                <i class="fa-solid fa-lightbulb text-cmcGold"></i>
+                                <span>Dicas da APM & Lumina</span>
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">Apoio emocional aos pais e alunos, orientações de inscrições em vestibulares e plantões de véspera do Portal Lumina em coordenação com a 1ª Cia.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MURAL DE ANIVERSARIANTES & DESTAQUES DO QDT -->
+    <section id="mural" class="py-20 bg-slate-50 border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-cmcBlue font-extrabold text-xs uppercase tracking-widest bg-cmcBlue/10 px-3.5 py-1.5 rounded-md">Comunidade Unida</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Mural de Aniversariantes & Avisos QDT</h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Celebramos nossos alunos e mantemos a comunidade informada sobre os principais avisos da semana do Colégio Militar de Curitiba.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Birthday Board -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+                        <h3 class="text-xl font-bold text-slate-900 flex items-center space-x-2">
+                            <i class="fa-solid fa-cake-candles text-cmcGold"></i>
+                            <span>Aniversariantes da Semana</span>
+                        </h3>
+                        <span class="text-xs bg-cmcBlue/10 text-cmcBlue font-semibold px-3 py-1 rounded-full">Outubro / 2026</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-surfaceLight rounded-2xl border border-slate-100">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-cmcBlue text-white font-bold flex items-center justify-center text-sm">
+                                    <span>L.M.</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">Lucas Martins</h4>
+                                    <p class="text-xs text-slate-500">8º Ano • 2ª Companhia</p>
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">28 de Out</span>
+                        </div>
+
+                        <div class="flex items-center justify-between p-4 bg-surfaceLight rounded-2xl border border-slate-100">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-cmcRed text-white font-bold flex items-center justify-center text-sm">
+                                    <span>A.S.</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">Ana Sophia</h4>
+                                    <p class="text-xs text-slate-500">1º Ano EM • 1ª Companhia</p>
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">30 de Out</span>
+                        </div>
+
+                        <div class="flex items-center justify-between p-4 bg-surfaceLight rounded-2xl border border-slate-100">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm">
+                                    <span>G.H.</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">Gabriel Henrique</h4>
+                                    <p class="text-xs text-slate-500">6º Ano • 3ª Companhia</p>
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">02 de Nov</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QDT Highlights -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+                        <h3 class="text-xl font-bold text-slate-900 flex items-center space-x-2">
+                            <i class="fa-solid fa-bullhorn text-cmcGold"></i>
+                            <span>Destaques & Avisos QDT</span>
+                        </h3>
+                        <span class="text-xs bg-emerald-100 text-emerald-700 font-semibold px-3 py-1 rounded-full">Ativo</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-surfaceLight rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-cmcBlue">AVISO DA APM</span>
+                            <h4 class="font-bold text-slate-800 text-sm mt-1">Campanha de Doação e Troca de Uniformes</h4>
+                            <p class="text-xs text-slate-600 mt-1">Ajude novos pais a adquirirem peças de fardamento em excelente estado por valores solidários na sede da APM.</p>
+                        </div>
+                        <div class="p-4 bg-surfaceLight rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-emerald-600">PORTAL LUMINA</span>
+                            <h4 class="font-bold text-slate-800 text-sm mt-1">Simulado Geral Online de Matemática</h4>
+                            <p class="text-xs text-slate-600 mt-1">Disponível a partir deste sábado para alunos do Ensino Fundamental e Médio testarem seus conhecimentos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS DE PAIS -->
+    <section id="depoimentos" class="py-20 bg-white border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-cmcBlue font-extrabold text-xs uppercase tracking-widest bg-cmcBlue/10 px-3.5 py-1.5 rounded-md">Depoimentos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">O Que Dizem os Pais do CMC</h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Histórias reais de famílias que encontraram suporte e tranquilidade através da união APM e Portal Lumina.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-surfaceLight p-8 rounded-3xl border border-slate-200 flex flex-col justify-between shadow-sm">
+                    <p class="text-slate-700 text-sm leading-relaxed italic">
+                        "Entrar no Colégio Militar com um filho no 6º ano gerou muitas dúvidas em casa. O guia de fardamento e o suporte da 3ª Companhia nos deram uma paz gigante!"
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-slate-200 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-cmcBlue text-white font-bold flex items-center justify-center text-sm">
+                            <span>CM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Carla Medeiros</h4>
+                            <p class="text-xs text-slate-500">Mãe de aluno do 6º Ano (3ª Cia)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-surfaceLight p-8 rounded-3xl border border-slate-200 flex flex-col justify-between shadow-sm">
+                    <p class="text-slate-700 text-sm leading-relaxed italic">
+                        "As dicas do Portal Lumina e o atendimento da 2ª Companhia ajudaram meu filho no 8º ano a organizar melhor o tempo de estudo e melhorar suas notas em exatas."
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-slate-200 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm">
+                            <span>RP</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Roberto Pereira</h4>
+                            <p class="text-xs text-slate-500">Pai de aluno do 8º Ano (2ª Cia)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-surfaceLight p-8 rounded-3xl border border-slate-200 flex flex-col justify-between shadow-sm">
+                    <p class="text-slate-700 text-sm leading-relaxed italic">
+                        "No 3º ano do Ensino Médio, ter o apoio integrado da 1ª Companhia, APM e Portal Lumina foi o diferencial para a aprovação dele no vestibular militar."
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-slate-200 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-cmcRed text-white font-bold flex items-center justify-center text-sm">
+                            <span>SF</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Sandra Farias</h4>
+                            <p class="text-xs text-slate-500">Mãe de aluno do 3º EM (1ª Cia)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO & CONTATO POR COMPANHIAS -->
+    <section id="contato" class="py-20 bg-slate-50 border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-cmcBlue font-extrabold text-xs uppercase tracking-widest bg-cmcBlue/10 px-3.5 py-1.5 rounded-md">Canais Oficiais</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Atendimento por Companhias no WhatsApp</h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Selecione a Companhia correspondente ao ano escolar do seu filho para falar diretamente com a equipe de suporte e orientação.
+                </p>
+            </div>
+
+            <!-- WhatsApp Companies Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- 3ª Companhia -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between text-center">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto mb-6 shadow-sm">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <span class="text-xs font-extrabold text-emerald-600 uppercase tracking-wider">6º e 7º Ano Fundamental</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1 mb-3">3ª Companhia</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            Suporte dedicado aos alunos do início do Ensino Fundamental e pais de primeira viagem.
+                        </p>
+                        <div class="bg-slate-50 py-2.5 px-4 rounded-xl border border-slate-200 text-sm font-extrabold text-slate-800 mb-6">
+                            <i class="fa-solid fa-phone text-emerald-600 mr-2"></i> (41) 3592-4233
+                        </div>
+                    </div>
+                    <a href="https://wa.me/554135924233?text=Olá!%20Sou%20responsável%20de%20aluno%20da%203ª%20Companhia%20(6º/7º%20ano)%20do%20CMC." target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-2xl font-bold text-sm shadow-md transition-all flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Falar com a 3ª Cia</span>
+                    </a>
+                </div>
+
+                <!-- 2ª Companhia -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between text-center">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto mb-6 shadow-sm">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <span class="text-xs font-extrabold text-emerald-600 uppercase tracking-wider">8º e 9º Ano Fundamental</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1 mb-3">2ª Companhia</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            Apoio acadêmico e orientações para o fechamento do Ensino Fundamental.
+                        </p>
+                        <div class="bg-slate-50 py-2.5 px-4 rounded-xl border border-slate-200 text-sm font-extrabold text-slate-800 mb-6">
+                            <i class="fa-solid fa-phone text-emerald-600 mr-2"></i> (41) 3592-4232
+                        </div>
+                    </div>
+                    <a href="https://wa.me/554135924232?text=Olá!%20Sou%20responsável%20de%20aluno%20da%202ª%20Companhia%20(8º/9º%20ano)%20do%20CMC." target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-2xl font-bold text-sm shadow-md transition-all flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Falar com a 2ª Cia</span>
+                    </a>
+                </div>
+
+                <!-- 1ª Companhia -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between text-center">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto mb-6 shadow-sm">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <span class="text-xs font-extrabold text-emerald-600 uppercase tracking-wider">1º, 2º e 3º Ano Ensino Médio</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1 mb-3">1ª Companhia</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            Foco em alta performance, simulados e preparação para vestibulares e Academias Militares.
+                        </p>
+                        <div class="bg-slate-50 py-2.5 px-4 rounded-xl border border-slate-200 text-sm font-extrabold text-slate-800 mb-6">
+                            <i class="fa-solid fa-phone text-emerald-600 mr-2"></i> (41) 3592-4231
+                        </div>
+                    </div>
+                    <a href="https://wa.me/554135924231?text=Olá!%20Sou%20responsável%20de%20aluno%20da%201ª%20Companhia%20(Ensino%20Médio)%20do%20CMC." target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-2xl font-bold text-sm shadow-md transition-all flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Falar com a 1ª Cia</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Address and Info Box -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex items-start space-x-4">
+                    <div class="w-11 h-11 rounded-2xl bg-cmcBlue text-white flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Endereço</h4>
+                        <p class="text-sm text-slate-600">Praça Hélio Teixeira Schuler, s/n - Tarumã, Curitiba - PR</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="w-11 h-11 rounded-2xl bg-cmcRed text-white flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Horário de Atendimento</h4>
+                        <p class="text-sm text-slate-600">Segunda a Sexta: 08:00 às 17:00</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="w-11 h-11 rounded-2xl bg-purple-600 text-white flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Redes Sociais Oficiais</h4>
+                        <div class="flex space-x-3 mt-1 text-xs font-bold text-cmcBlue">
+                            <a href="https://www.instagram.com/cmc_exercito/" target="_blank" class="hover:underline">CMC</a>
+                            <span>•</span>
+                            <a href="https://www.instagram.com/apm.cmc/" target="_blank" class="hover:underline">APM</a>
+                            <span>•</span>
+                            <a href="https://www.instagram.com/luminaschoolofmasters/" target="_blank" class="hover:underline">Lumina</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-cmcBlue text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-700/60">
+                <div class="flex items-center space-x-4">
+                    <div class="flex space-x-3">
+                        <a href="https://www.instagram.com/cmc_exercito/" target="_blank"><img src="CMC.jpg" alt="CMC" class="w-10 h-10 rounded-lg object-cover bg-white p-0.5 hover:scale-105 transition-transform"></a>
+                        <a href="https://www.instagram.com/apm.cmc/" target="_blank"><img src="apm.jpg" alt="APM" class="w-10 h-10 rounded-lg object-cover bg-white p-0.5 hover:scale-105 transition-transform"></a>
+                        <a href="https://www.instagram.com/luminaschoolofmasters/" target="_blank"><img src="lumina 2.jpg" alt="Lumina" class="w-12 h-10 rounded-lg object-cover bg-white p-0.5 hover:scale-105 transition-transform"></a>
+                    </div>
+                    <div>
+                        <span class="block font-extrabold text-base">APM CMC & Portal Lumina</span>
+                        <span class="text-xs text-slate-300">Colégio Militar de Curitiba</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div class="flex flex-col items-center">
+                        <a href="https://www.instagram.com/cmc_exercito/" target="_blank" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-cmcGold hover:text-cmcBlue text-white flex items-center justify-center transition-colors" title="Instagram CMC">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <span class="text-[11px] font-semibold text-slate-300 mt-1">CMC</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <a href="https://www.instagram.com/apm.cmc/" target="_blank" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-cmcGold hover:text-cmcBlue text-white flex items-center justify-center transition-colors" title="Instagram APM">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <span class="text-[11px] font-semibold text-slate-300 mt-1">APM</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <a href="https://www.instagram.com/luminaschoolofmasters/" target="_blank" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-emerald-500 hover:text-white text-white flex items-center justify-center transition-colors" title="Instagram Lumina">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <span class="text-[11px] font-semibold text-slate-300 mt-1">Lumina</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 text-center text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; 2026 APM CMC & Portal Lumina School of Masters. Todos os direitos reservados.</p>
+                <p>Desenvolvido em parceria institucional para apoio aos pais e alunos do CMC.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JS Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tab Switching Logic for Grades (6º ao 3º EM)
+        function switchTab(gradeId) {
+            // Hide all contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(c => c.classList.add('hidden'));
+
+            // Remove active styles from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(b => {
+                b.classList.remove('bg-cmcBlue', 'text-white', 'shadow-md');
+                b.classList.add('text-slate-600', 'hover:text-slate-900');
+            });
+
+            // Show selected content
+            const activeContent = document.getElementById('content-' + gradeId);
+            if (activeContent) {
+                activeContent.classList.remove('hidden');
+            }
+
+            // Highlight selected button
+            const activeBtn = document.getElementById('btn-' + gradeId);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-slate-600', 'hover:text-slate-900');
+                activeBtn.classList.add('bg-cmcBlue', 'text-white', 'shadow-md');
+            }
+        }
+    </script>
+</body>
+</html>
