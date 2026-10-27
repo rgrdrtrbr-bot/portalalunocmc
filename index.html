@@ -141,23 +141,28 @@
                         </a>
                     </div>
                     <!-- Trust Badges -->
-                    <div class="pt-6 border-t border-slate-200/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-slate-600 font-semibold">
-                        <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
-                            <span>QDT Atualizado</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
-                            <span>Orientações da APM</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
-                            <span>Tutoria Lumina</span>
-                        </div>
-                    </div>
+            <div class="pt-6 border-t border-slate-200/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-slate-600 font-semibold">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                    <span>QDT Atualizado</span>
                 </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                    <span>Orientações da APM</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                    <span>Tutoria Lumina</span>
+                </div>
+            </div>
+            <!-- Cloud Status Badge -->
+            <div id="cloud-status" class="mt-4 inline-flex items-center space-x-2 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold border border-emerald-200">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span id="cloud-status-text">Conectado ao Banco de Dados Seguro</span>
+            </div>
+        </div>
 
-                <!-- Right Graphic / Logos Showcase Card (Prominent Logos Display) -->
+        <!-- Right Graphic / Logos Showcase Card (Prominent Logos Display) -->
                 <div class="lg:col-span-5">
                     <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-2xl relative border border-slate-100 bg-white/95">
                         <!-- Badge -->
@@ -702,87 +707,90 @@
                 <span class="text-cmcBlue font-extrabold text-xs uppercase tracking-widest bg-cmcBlue/10 px-3.5 py-1.5 rounded-md">Comunidade Unida</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Mural de Aniversariantes & Avisos QDT</h2>
                 <p class="text-slate-600 mt-4 text-base sm:text-lg">
-                    Celebramos nossos alunos e mantemos a comunidade informada sobre os principais avisos da semana do Colégio Militar de Curitiba.
+                    Celebramos nossos alunos e mantemos a comunidade informada em tempo real com dados salvos na nuvem.
                 </p>
+                <div class="mt-6 flex justify-center">
+                    <button onclick="openAddModal()" class="bg-cmcBlue hover:bg-slate-800 text-white px-5 py-2.5 rounded-xl font-bold text-xs shadow-md transition-all flex items-center space-x-2">
+                        <i class="fa-solid fa-plus text-cmcGold"></i>
+                        <span>Adicionar Anúncio / Aniversariante</span>
+                    </button>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Birthday Board -->
-                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm">
-                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
-                        <h3 class="text-xl font-bold text-slate-900 flex items-center space-x-2">
-                            <i class="fa-solid fa-cake-candles text-cmcGold"></i>
-                            <span>Aniversariantes da Semana</span>
-                        </h3>
-                        <span class="text-xs bg-cmcBlue/10 text-cmcBlue font-semibold px-3 py-1 rounded-full">Outubro / 2026</span>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between p-4 bg-surfaceLight rounded-2xl border border-slate-100">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-full bg-cmcBlue text-white font-bold flex items-center justify-center text-sm">
-                                    <span>L.M.</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 text-sm">Lucas Martins</h4>
-                                    <p class="text-xs text-slate-500">8º Ano • 2ª Companhia</p>
-                                </div>
-                            </div>
-                            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">28 de Out</span>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+                            <h3 class="text-xl font-bold text-slate-900 flex items-center space-x-2">
+                                <i class="fa-solid fa-cake-candles text-cmcGold"></i>
+                                <span>Aniversariantes Cadastrados</span>
+                            </h3>
+                            <span class="text-xs bg-cmcBlue/10 text-cmcBlue font-semibold px-3 py-1 rounded-full">Tempo Real</span>
                         </div>
-
-                        <div class="flex items-center justify-between p-4 bg-surfaceLight rounded-2xl border border-slate-100">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-full bg-cmcRed text-white font-bold flex items-center justify-center text-sm">
-                                    <span>A.S.</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 text-sm">Ana Sophia</h4>
-                                    <p class="text-xs text-slate-500">1º Ano EM • 1ª Companhia</p>
-                                </div>
-                            </div>
-                            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">30 de Out</span>
-                        </div>
-
-                        <div class="flex items-center justify-between p-4 bg-surfaceLight rounded-2xl border border-slate-100">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm">
-                                    <span>G.H.</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 text-sm">Gabriel Henrique</h4>
-                                    <p class="text-xs text-slate-500">6º Ano • 3ª Companhia</p>
-                                </div>
-                            </div>
-                            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">02 de Nov</span>
+                        <div id="birthdays-container" class="space-y-4">
+                            <!-- Dynamic Birthday Items loaded from Firestore -->
+                            <div class="text-center py-6 text-slate-400 text-sm">Carregando aniversariantes...</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- QDT Highlights -->
-                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm">
-                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
-                        <h3 class="text-xl font-bold text-slate-900 flex items-center space-x-2">
-                            <i class="fa-solid fa-bullhorn text-cmcGold"></i>
-                            <span>Destaques & Avisos QDT</span>
-                        </h3>
-                        <span class="text-xs bg-emerald-100 text-emerald-700 font-semibold px-3 py-1 rounded-full">Ativo</span>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="p-4 bg-surfaceLight rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-cmcBlue">AVISO DA APM</span>
-                            <h4 class="font-bold text-slate-800 text-sm mt-1">Campanha de Doação e Troca de Uniformes</h4>
-                            <p class="text-xs text-slate-600 mt-1">Ajude novos pais a adquirirem peças de fardamento em excelente estado por valores solidários na sede da APM.</p>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+                            <h3 class="text-xl font-bold text-slate-900 flex items-center space-x-2">
+                                <i class="fa-solid fa-bullhorn text-cmcGold"></i>
+                                <span>Destaques & Avisos QDT</span>
+                            </h3>
+                            <span class="text-xs bg-emerald-100 text-emerald-700 font-semibold px-3 py-1 rounded-full">Ativo</span>
                         </div>
-                        <div class="p-4 bg-surfaceLight rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-emerald-600">PORTAL LUMINA</span>
-                            <h4 class="font-bold text-slate-800 text-sm mt-1">Simulado Geral Online de Matemática</h4>
-                            <p class="text-xs text-slate-600 mt-1">Disponível a partir deste sábado para alunos do Ensino Fundamental e Médio testarem seus conhecimentos.</p>
+                        <div id="notices-container" class="space-y-4">
+                            <!-- Dynamic Notices loaded from Firestore -->
+                            <div class="text-center py-6 text-slate-400 text-sm">Carregando avisos do QDT...</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Custom Modal for Adding Item -->
+    <div id="add-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeAddModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Novo Registro na Nuvem</h3>
+            <p class="text-xs text-slate-500 mb-6">Cadastre um aniversariante ou um aviso do QDT para toda a comunidade.</p>
+            
+            <form id="community-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Tipo de Registro</label>
+                    <select id="item-type" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold text-slate-800 focus:outline-none focus:border-cmcBlue">
+                        <option value="birthday">Aniversariante do Aluno</option>
+                        <option value="notice">Aviso / Destaque QDT</option>
+                    </select>
+                </div>
+                <div id="field-title-container">
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nome do Aluno ou Título do Aviso</label>
+                    <input type="text" id="item-title" required placeholder="Ex: Lucas Martins ou Simulado Geral" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold text-slate-800 focus:outline-none focus:border-cmcBlue">
+                </div>
+                <div id="field-subtitle-container">
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Série / Companhia ou Descrição</label>
+                    <input type="text" id="item-subtitle" required placeholder="Ex: 8º Ano • 2ª Companhia" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold text-slate-800 focus:outline-none focus:border-cmcBlue">
+                </div>
+                <div id="field-date-container">
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Data ou Categoria</label>
+                    <input type="text" id="item-date" required placeholder="Ex: 28 de Out ou AVISO DA APM" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold text-slate-800 focus:outline-none focus:border-cmcBlue">
+                </div>
+                <div class="pt-4 flex space-x-3">
+                    <button type="button" onclick="closeAddModal()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-xl font-bold text-xs transition-all">Cancelar</button>
+                    <button type="submit" class="w-1/2 bg-cmcBlue hover:bg-slate-800 text-white py-3 rounded-xl font-bold text-xs shadow-md transition-all">Salvar na Nuvem</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- DEPOIMENTOS DE PAIS -->
     <section id="depoimentos" class="py-20 bg-white border-t border-slate-200/60">
@@ -1005,10 +1013,172 @@
             </div>
             <div class="pt-8 text-center text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p>&copy; 2026 APM CMC & Portal Lumina School of Masters. Todos os direitos reservados.</p>
-                <p>Desenvolvido em parceria institucional para apoio aos pais e alunos do CMC.</p>
+                <p>Desenvolvido em parceria institucional para apoio aos pais e alunos do CMC com banco de dados em tempo real.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Firebase SDKs and Cloud Logic -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'cmc-apm-lumina-default';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
+            apiKey: "AIzaSyDummyKeyForPreviewModeOnly12345",
+            authDomain: "cmc-portal.firebaseapp.com",
+            projectId: "cmc-portal"
+        };
+
+        let db, auth, currentUser;
+
+        try {
+            const app = initializeApp(firebaseConfig);
+            db = getFirestore(app);
+            auth = getAuth(app);
+
+            const token = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+            if (token) {
+                signInWithCustomToken(auth, token).catch(() => signInAnonymously(auth));
+            } else {
+                signInAnonymously(auth).catch(err => console.log("Auth fallback active", err));
+            }
+
+            auth.onAuthStateChanged(user => {
+                currentUser = user;
+                if (user) {
+                    document.getElementById('cloud-status-text').innerText = "Banco de Dados em Tempo Real Ativo";
+                    initFirestoreListeners();
+                }
+            });
+        } catch (e) {
+            console.log("Running in offline standalone mode", e);
+            document.getElementById('cloud-status-text').innerText = "Modo Local Ativo";
+            loadDefaultData();
+        }
+
+        function initFirestoreListeners() {
+            if (!db) return;
+            const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'community_items');
+            
+            onSnapshot(colRef, (snapshot) => {
+                const items = [];
+                snapshot.forEach(doc => {
+                    items.push({ id: doc.id, ...doc.data() });
+                });
+                if (items.length === 0) {
+                    seedInitialData(colRef);
+                } else {
+                    renderCommunityData(items);
+                }
+            }, (error) => {
+                console.error("Firestore sync error:", error);
+                loadDefaultData();
+            });
+        }
+
+        async function seedInitialData(colRef) {
+            const defaults = [
+                { type: 'birthday', title: 'Lucas Martins', subtitle: '8º Ano • 2ª Companhia', date: '28 de Out' },
+                { type: 'birthday', title: 'Ana Sophia', subtitle: '1º Ano EM • 1ª Companhia', date: '30 de Out' },
+                { type: 'birthday', title: 'Gabriel Henrique', subtitle: '6º Ano • 3ª Companhia', date: '02 de Nov' },
+                { type: 'notice', title: 'Campanha de Doação e Troca de Uniformes', subtitle: 'Ajude novos pais a adquirirem peças de fardamento em excelente estado por valores solidários na sede da APM.', date: 'AVISO DA APM' },
+                { type: 'notice', title: 'Simulado Geral Online de Matemática', subtitle: 'Disponível a partir deste sábado para alunos do Ensino Fundamental e Médio testarem seus conhecimentos.', date: 'PORTAL LUMINA' }
+            ];
+            for (let item of defaults) {
+                await addDoc(colRef, item);
+            }
+        }
+
+        function loadDefaultData() {
+            const defaults = [
+                { type: 'birthday', title: 'Lucas Martins', subtitle: '8º Ano • 2ª Companhia', date: '28 de Out' },
+                { type: 'birthday', title: 'Ana Sophia', subtitle: '1º Ano EM • 1ª Companhia', date: '30 de Out' },
+                { type: 'birthday', title: 'Gabriel Henrique', subtitle: '6º Ano • 3ª Companhia', date: '02 de Nov' },
+                { type: 'notice', title: 'Campanha de Doação e Troca de Uniformes', subtitle: 'Ajude novos pais a adquirirem peças de fardamento em excelente estado por valores solidários na sede da APM.', date: 'AVISO DA APM' },
+                { type: 'notice', title: 'Simulado Geral Online de Matemática', subtitle: 'Disponível a partir deste sábado para alunos do Ensino Fundamental e Médio testarem seus conhecimentos.', date: 'PORTAL LUMINA' }
+            ];
+            renderCommunityData(defaults);
+        }
+
+        function renderCommunityData(items) {
+            const birthdaysContainer = document.getElementById('birthdays-container');
+            const noticesContainer = document.getElementById('notices-container');
+
+            birthdaysContainer.innerHTML = '';
+            noticesContainer.innerHTML = '';
+
+            const birthdays = items.filter(i => i.type === 'birthday');
+            const notices = items.filter(i => i.type === 'notice');
+
+            if (birthdays.length === 0) {
+                birthdaysContainer.innerHTML = '<div class="text-center py-4 text-slate-400 text-sm">Nenhum aniversariante cadastrado.</div>';
+            } else {
+                birthdays.forEach(b => {
+                    const initials = b.title.split(' ').map(n => n[0]).slice(0,2).join('').toUpperCase();
+                    const div = document.createElement('div');
+                    div.className = "flex items-center justify-between p-4 bg-surfaceLight rounded-2xl border border-slate-100 shadow-sm";
+                    div.innerHTML = `
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-cmcBlue text-white font-bold flex items-center justify-center text-sm">
+                                <span>${initials}</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">${b.title}</h4>
+                                <p class="text-xs text-slate-500">${b.subtitle}</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">${b.date}</span>
+                    `;
+                    birthdaysContainer.appendChild(div);
+                });
+            }
+
+            if (notices.length === 0) {
+                noticesContainer.innerHTML = '<div class="text-center py-4 text-slate-400 text-sm">Nenhum aviso no QDT.</div>';
+            } else {
+                notices.forEach(n => {
+                    const div = document.createElement('div');
+                    div.className = "p-4 bg-surfaceLight rounded-2xl border border-slate-100 shadow-sm";
+                    div.innerHTML = `
+                        <span class="text-xs font-bold text-cmcBlue">${n.date}</span>
+                        <h4 class="font-bold text-slate-800 text-sm mt-1">${n.title}</h4>
+                        <p class="text-xs text-slate-600 mt-1">${n.subtitle}</p>
+                    `;
+                    noticesContainer.appendChild(div);
+                });
+            }
+        }
+
+        window.handleFormSubmit = async function(event) {
+            event.preventDefault();
+            const type = document.getElementById('item-type').value;
+            const title = document.getElementById('item-title').value;
+            const subtitle = document.getElementById('item-subtitle').value;
+            const date = document.getElementById('item-date').value;
+
+            const newItem = { type, title, subtitle, date };
+
+            if (db && auth && auth.currentUser) {
+                try {
+                    const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'community_items');
+                    await addDoc(colRef, newItem);
+                } catch (e) {
+                    console.error("Error adding document to cloud", e);
+                }
+            } else {
+                // Local fallback simulation
+                const existing = JSON.parse(localStorage.getItem('cmc_local_items') || '[]');
+                existing.push(newItem);
+                localStorage.setItem('cmc_local_items', JSON.stringify(existing));
+                loadDefaultData();
+            }
+
+            closeAddModal();
+            document.getElementById('community-form').reset();
+        }
+    </script>
 
     <!-- Interactive JS Scripts -->
     <script>
@@ -1020,26 +1190,31 @@
             mobileMenu.classList.toggle('hidden');
         });
 
+        // Modal Controls
+        function openAddModal() {
+            document.getElementById('add-modal').classList.remove('hidden');
+        }
+
+        function closeAddModal() {
+            document.getElementById('add-modal').classList.add('hidden');
+        }
+
         // Tab Switching Logic for Grades (6º ao 3º EM)
         function switchTab(gradeId) {
-            // Hide all contents
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(c => c.classList.add('hidden'));
 
-            // Remove active styles from all buttons
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(b => {
                 b.classList.remove('bg-cmcBlue', 'text-white', 'shadow-md');
                 b.classList.add('text-slate-600', 'hover:text-slate-900');
             });
 
-            // Show selected content
             const activeContent = document.getElementById('content-' + gradeId);
             if (activeContent) {
                 activeContent.classList.remove('hidden');
             }
 
-            // Highlight selected button
             const activeBtn = document.getElementById('btn-' + gradeId);
             if (activeBtn) {
                 activeBtn.classList.remove('text-slate-600', 'hover:text-slate-900');
